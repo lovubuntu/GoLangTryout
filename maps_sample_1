@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m map[string]Vertex
+var q map[Vertex]int
+
+func main() {
+    m = make(map[string]Vertex)
+    m["Bell Labs"] = Vertex{
+        40.68433, -74.39967,
+    }
+    m["One"] = Vertex{
+              12.34,67.567}
+    m["Two"] = Vertex{
+            34.45,56.67,
+        }
+        
+    fmt.Println(m)
+    q = make(map[Vertex]int)
+    v := Vertex {12.34,56.78}
+    q[v] = 234
+    fmt.Println(q)
+}

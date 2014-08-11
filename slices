@@ -1,0 +1,20 @@
+package main
+
+import "code.google.com/p/go-tour/pic"
+
+func Pic(dx, dy int) [][]uint8 {
+    uint2d := make([][]uint8,dx)
+    for i := range uint2d{
+        uint2d[i] = make([]uint8,dy)
+    }
+    for i, sli := range uint2d{
+        for j := range sli{
+        	uint2d[i][j] = uint8(i^j)
+        }
+    }
+    return uint2d
+}
+
+func main() {
+    pic.Show(Pic)
+}
