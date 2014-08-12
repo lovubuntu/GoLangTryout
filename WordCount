@@ -1,0 +1,19 @@
+package main
+
+import (
+    "code.google.com/p/go-tour/wc"
+    "strings"
+)
+
+func WordCount(s string) map[string]int {
+    splitWords := strings.Fields(s)
+    var wordMap = make(map[string]int)
+    for _,key := range splitWords{
+    	wordMap[key] = wordMap[key] + 1
+    }
+    return wordMap
+}
+
+func main() {
+    wc.Test(WordCount)
+}
